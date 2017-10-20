@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-  return view('welcome');
-});
-
-// Route::get('/books', function () {
-//     return view('books/index');
+// Route::get('/', function () {
+//   return view('welcome');
 // });
+
+Route::get('/',[
+  'uses' => 'BookController@index'
+]);
+
 Route::get('books',[
   'uses' => 'BookController@index'
 ]);
