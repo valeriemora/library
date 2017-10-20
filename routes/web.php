@@ -12,5 +12,41 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
+
+// Route::get('/books', function () {
+//     return view('books/index');
+// });
+Route::get('books',[
+  'uses' => 'BookController@index'
+]);
+
+Route::get('books/index',[
+  'uses' => 'BookController@index'
+]);
+
+Route::get('books/create',[
+  'uses' => 'BookController@create'
+]);
+
+
+Route::post('books/store',[
+  'uses' => 'BookController@store'
+]);
+
+Route::get('books/show/{id}',[
+  'uses' => 'BookController@show'
+]);
+
+Route::get('books/{id}/edit',[
+  'uses' => 'BookController@edit'
+]);
+
+Route::post('books/update',[
+  'uses' => 'BookController@update'
+]);
+
+Route::get('books/{id}/destroy',[
+  'uses' => 'BookController@destroy'
+]);
